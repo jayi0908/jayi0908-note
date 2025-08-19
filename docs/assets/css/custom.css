@@ -11,11 +11,11 @@ body {
 /*添加字体为霞鹜文楷*/
 
 
-[data-md-color-scheme="default"] .dark-theme-image {
+[data-md-color-scheme="default"] .only-dark {
     display: none;
 } /*default主题下隐藏黑色图片*/
 
-[data-md-color-scheme="slate"] .light-theme-image {
+[data-md-color-scheme="slate"] .only-light {
     display: none;
 } /*slate主题下隐藏白色图片*/
 
@@ -50,6 +50,49 @@ body {
             mask-image: var(--md-admonition-icon--proof); /*修改标题图标*/
 }
 
+/* 核心：自动在展开的proof结尾添加右对齐的方框符号 */
+.md-typeset details.proof[open] > *:last-child::after {
+    content: "□"; /* 方框符号（对应KaTeX的\Box） */
+    display: block; /* 单独成行 */
+    text-align: right; /* 右对齐 */
+    margin-top: 0.4em; /* 与上方内容保持间距 */
+    font-size: 1em; /* 符号大小 */
+}
+
+/*标签(Admonition)"theorem"*/
+[data-md-color-scheme=default] {
+    --md-admonition-icon--thm: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16.75 22.16-2.75-3L15.16 18l1.59 1.59L20.34 16l1.16 1.41-4.75 4.75M17 4v6l-2-2-2 2V4H9v16h3.08c.12.72.37 1.39.72 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v9.8c-.61-.35-1.28-.6-2-.72V4h-2M5 19h2v-2H5v2m0-6h2v-2H5v2m0-6h2V5H5v2Z"/></svg>');
+    --thm-border-color: rgb(108, 68, 138);
+    --thm-title-bg-color: rgb(255, 255, 255);
+    --thm-icon-bg-color: rgb(0, 0, 0);
+} /*亮色主题下标签的配色变量*/
+[data-md-color-scheme=slate] {
+    --md-admonition-icon--thm: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16.75 22.16-2.75-3L15.16 18l1.59 1.59L20.34 16l1.16 1.41-4.75 4.75M17 4v6l-2-2-2 2V4H9v16h3.08c.12.72.37 1.39.72 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v9.8c-.61-.35-1.28-.6-2-.72V4h-2M5 19h2v-2H5v2m0-6h2v-2H5v2m0-6h2V5H5v2Z"/></svg>');
+    --thm-border-color: rgb(108, 68, 138);
+    --thm-title-bg-color: rgb(150, 100, 150);
+    --thm-icon-bg-color: rgb(255, 255, 255);
+} /*暗色主题下标签的配色变量*/
+
+.md-typeset .admonition.thm,
+.md-typeset details.thm {
+    border-color: var(--thm-border-color);
+    padding-bottom: 1em;
+}
+.md-typeset details.thm:not([open]) {
+    padding-bottom: 0;
+}
+
+.md-typeset .thm > .admonition-title,
+.md-typeset .thm > summary {
+    background-color: var(--thm-title-bg-color);
+} /*修改标题背景颜色*/
+
+.md-typeset .thm > .admonition-title::before,
+.md-typeset .thm > summary::before {
+    background-color: var(--thm-icon-bg-color); /*修改标题颜色*/
+    -webkit-mask-image: var(--md-admonition-icon--thm);
+            mask-image: var(--md-admonition-icon--thm); /*修改标题图标*/
+}
 
 /*标签(Admonition)"music"*/
 [data-md-color-scheme=default] {
@@ -88,4 +131,15 @@ body {
 
 [data-md-color-scheme=slate] a.hiddenlink {
     color: hsla(225,15%,90%,0.82);  /* slate 主题下黑色背景，设置灰白色文本 */
+}
+
+.katex-display {
+  overflow-x: auto;   /* 超出部分可横向滚动 */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* iOS 惯性滚动 */
+  text-align: center; /* 桌面端仍然居中 */
+}
+
+.katex-display > .katex {
+  white-space: nowrap; /* 不换行，保持完整公式 */
 }

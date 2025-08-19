@@ -1,45 +1,53 @@
 nav:
-  - Home: index.md
-  - Why Trigonometry: ./Why_tri/about.md
-  - Useful Tools: 
-    - Toc: ./Useful_Tools/tools.md
-    - 和差化积与积化和差: ./Useful_Tools/sum2product.md
-    - 变相同一法: ./Useful_Tools/another_equal.md
-    - 余切联合技术: ./Useful_Tools/cot.md
-    - 合分比技术: ./Useful_Tools/mean_proportionals.md
-  - Sine Law: 
-    - 奠基性的正弦定理: ./Sine_Law/sine.md
-    - 正弦定理系: ./Sine_Law/more_sine.md
-  - Cosine Law: 
-    - 补充性的余弦定理: ./Cosine_Law/cosine.md
-    - 余弦定理系: ./Cosine_Law/more_cosine.md
-  - TIT: 
-    - 三角联合定理: ./TIT/tit.md
-    - 基于“消点”的三角法底层展开: ./TIT/expansion.md
-  - Basic Cons: 
-    - TIT的最后几块拼图(?): ./Basic_Cons/cons.md
-    - 圆相切: ./Basic_Cons/tangentcirc.md
-    - 塞瓦型补充: ./Basic_Cons/more_ceva.md
-  - Others: 
-    - 记号变动: ./Others/others.md
+  - Home:
+    - index.md
+  - Series:
+    - series/index.md
+    - 三角函数未竟之美:
+      - series/trigonometry/index.md
+      - 为何用三角法: series/trigonometry/Why_tri/about.md
+      - 实用工具拾遗: 
+        - series/trigonometry/Useful_Tools/index.md
+        - 和差化积与积化和差: series/trigonometry/Useful_Tools/sum2product.md
+        - 变相同一法: series/trigonometry/Useful_Tools/another_equal.md
+        - 余切联合技术: series/trigonometry/Useful_Tools/cot.md
+        - 合分比技术: series/trigonometry/Useful_Tools/mean_proportionals.md
+      - 正弦定理杂谈: 
+        - series/trigonometry/Sine_Law/index.md
+        - 奠基性的正弦定理: series/trigonometry/Sine_Law/sine.md
+        - 正弦定理系: series/trigonometry/Sine_Law/more_sine.md
+      - 余弦定理杂谈: 
+        - series/trigonometry/Cosine_Law/index.md
+        - 补充性的余弦定理: series/trigonometry/Cosine_Law/cosine.md
+        - 余弦定理系: series/trigonometry/Cosine_Law/more_cosine.md
+      - 三角联合定理: 
+        - 三角联合定理: series/trigonometry/TIT/tit.md
+        - 基于“消点”的三角法底层展开: series/trigonometry/TIT/expansion.md
+      - 基本构型补全: 
+        - TIT的最后几块拼图(?): series/trigonometry/Basic_Cons/cons.md
+        - 圆相切: series/trigonometry/Basic_Cons/tangentcirc.md
+        - 塞瓦型补充: series/trigonometry/Basic_Cons/more_ceva.md
+      - 杂项: 
+        - 记号变动: series/trigonometry/Others/others.md
 
-site_name: Trigonometry by jayi0908
-site_url: https://jayi0908.github.io/jayi0908-trigonometry/
-repo_name: jayi0908-trigonometry
-repo_url: https://github.com/jayi0908/jayi0908-trigonometry
+site_name: jayi0908's Note
+site_url: https://jayi0908.github.io/jayi0908-note
+repo_name: jayi0908-note
+repo_url: https://github.com/jayi0908/jayi0908-note
 copyright: Copyright &copy; 2024-? <a href="https://github.com/jayi0908" target="_blank" rel="noopener">jayi0908</a>
 theme:
-  name: material
-  custom_dir: overrides
+  name: 'material'
   language: 'zh'
+  custom_dir: overrides
   favicon: assets/icons/favicon.png
   icon: 
     logo: material/notebook-outline
     top: material/arrow-up-thin
   features:
+    - navigation.indexes
     - navigation.tabs # 顶部显示导航顶层nav（也就是第一个节点）
     - navigation.tabs.sticky # 滚动是隐藏顶部nav，需要配合navigation.tabs使用
-    - navigation.sections # 允许章节导航
+    # - navigation.sections
     - navigation.path # 允许路径导航(形如 Home > Details)
     - navigation.top # 允许返回顶部
     - navigation.footer # 允许页脚导航
@@ -59,18 +67,36 @@ theme:
       primary: blue
       accent: orange
 markdown_extensions:
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - admonition
-  - pymdownx.details
-  - pymdownx.arithmatex:
-      generic: true # 允许使用通用的数学公式
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
   - attr_list
   - md_in_html
+  - footnotes
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
 
 use_directory_urls: false
 plugins:
