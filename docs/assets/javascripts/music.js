@@ -1,5 +1,5 @@
 function setupMusicAdmonitions() {
-    const musicAdmonitions = document.querySelectorAll('.md-typeset details.music');
+    const musicAdmonitions = document.querySelectorAll('.md-typeset details.playmusic');
     const audioPlayers = [];
 
     musicAdmonitions.forEach((admonition) => {  

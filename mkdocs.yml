@@ -29,6 +29,10 @@ nav:
         - 塞瓦型补充: series/trigonometry/Basic_Cons/more_ceva.md
       - 杂项: 
         - 记号变动: series/trigonometry/Others/others.md
+  - Misc:
+    - 杂项: misc/index.md
+    - rythms:
+      - ふたつの影: misc/rythms/murasame.md
 
 site_name: jayi0908's Note
 site_url: https://jayi0908.github.io/jayi0908-note
@@ -54,6 +58,7 @@ theme:
     - navigation.prune # 侧边栏自动折叠
     - navigation.tracking # 在url中使用标题定位锚点
     - toc.follow # toc 跟随
+    - content.code.annotate
   palette:
     - scheme: default
       toggle:
@@ -99,16 +104,16 @@ markdown_extensions:
       generic: true
 
 use_directory_urls: false
-plugins:
-  - statistics:
-      words_per_minute: 200
-  - search: 
-      lang: [zh, en]
-      separator: '[\s\u200b\-]'
-      # separator: '[\s\-,:!=\[\]()"/]+|(?<!\w)\.(?!\d)|&[lg]t;' # 分词器分词规则，"[\s\-,:!=\[\]()"/]+"为特殊分隔符，"(?<!\w)\.(?!\d)"为小数点分隔符，"&[lg]t;"为HTML转义字符
-      jieba_dict:  # 自定义中文分词词典
-  - minify:
-      minify_html: true
+# plugins:
+#   - statistics:
+#       words_per_minute: 200
+#   - search: 
+#       lang: [zh, en]
+#       separator: '[\s\u200b\-]'
+#       # separator: '[\s\-,:!=\[\]()"/]+|(?<!\w)\.(?!\d)|&[lg]t;' # 分词器分词规则，"[\s\-,:!=\[\]()"/]+"为特殊分隔符，"(?<!\w)\.(?!\d)"为小数点分隔符，"&[lg]t;"为HTML转义字符
+#       jieba_dict:  # 自定义中文分词词典
+#   - minify:
+#       minify_html: true
 
 extra:
   generator: true
@@ -128,6 +133,7 @@ extra_css:
   - assets/css/custom.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  - https://cdn.jsdelivr.net/gh/kjartanhr/JetBrainsMono-Webfont@main/JetBrainsMono/JetBrainsMono.css
 extra_javascript:
   - assets/javascripts/katex.js
   - assets/javascripts/music.js
