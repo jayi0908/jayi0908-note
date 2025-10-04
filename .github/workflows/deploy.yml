@@ -1,10 +1,13 @@
 name: deploy
 on:
   push:
-    branches:
-      - master 
+    branches: ["master"]
+
 permissions:
-  contents: write  # 允许写入 GitHub Pages
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
