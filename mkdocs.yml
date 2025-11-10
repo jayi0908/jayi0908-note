@@ -33,6 +33,7 @@ nav:
     - 杂项: misc/index.md
     - rythms:
       - ふたつの影: misc/rythms/murasame.md
+      - 明け星: misc/rythms/akeboshi.md
 
 site_name: jayi0908's Note
 site_url: https://jayi0908.github.io/jayi0908-note

@@ -1,7 +1,7 @@
 ??? music "音源"
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=473403185&auto=1&height=66"></iframe>
 
-    > 暂时先用网易云提供的`<iframe>`标签吧
+    > 暂时使用网易云提供的`<iframe>`元素
 
 夕阳西下 灯火微亮 孩子们的嬉戏声  
 夕暮れ ともし火（び） 子どもの声  
