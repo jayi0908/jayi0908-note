@@ -1,8 +1,9 @@
-name: Deploy to Pages
+name: Deploy VitePress site to Pages
 
 on:
   push:
-    branches: ["master"]
+    branches: [master]
+
   workflow_dispatch:
 
 permissions:
@@ -11,38 +12,43 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          fetch-depth: 0 
 
-      - name: Install MkDocs and dependencies
-        run: pip install -r requirements.txt
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
 
-      - name: Build MkDocs site
-        run: mkdocs build --site-dir site
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Build with VitePress
+        run: npm run docs:build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './site'
+          path: docs/.vitepress/dist
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -1,0 +1,421 @@
+/* =========================================
+   全局变量定义 (颜色与图标)
+   ========================================= */
+:root {
+    /* --- 字体 --- */
+    --vp-font-family-base: "JetBrains Mono", "LXGW WenKai Screen", sans-serif;
+    --vp-font-family-mono: "JetBrains Mono", monospace;
+
+    /* --- 颜色变量 (Light Mode) --- */
+    
+    /* Proof (蓝色系) */
+    --admonition-proof-border: rgb(0, 120, 255);
+    --admonition-proof-bg: rgba(255, 255, 255, 0.08);
+    --admonition-proof-icon-color: rgb(0, 0, 0);
+    --admonition-proof-title: rgb(0,0,0);
+
+    /* Theorem (紫色系) */
+    --admonition-thm-border: rgb(108, 68, 138);
+    --admonition-thm-bg: rgba(255, 255, 255, 0.08);
+    --admonition-thm-icon-color: rgb(0, 0, 0);
+    --admonition-thm-title: rgb(0,0,0);
+
+    /* Music (粉色系) */
+    --admonition-music-border: rgb(250, 0, 200);
+    --admonition-music-bg: rgba(250, 0, 200, 0.08);
+    --admonition-music-icon-color: rgb(0, 0, 0);
+    --admonition-music-title: rgb(0,0,0);
+
+    /* Note (默认蓝/青) */
+    --admonition-note-border: rgb(68, 138, 255);
+    --admonition-note-bg: rgba(68, 138, 255, 0.1);
+    --admonition-note-icon-color: rgb(0, 0, 0);
+    --admonition-note-title: rgb(0,0,0);
+
+    /* Tip (绿色/Teal) */
+    --admonition-tip-border: rgb(0, 191, 165);
+    --admonition-tip-bg: rgba(0, 191, 165, 0.1);
+    --admonition-tip-icon-color: rgb(0, 0, 0);
+    --admonition-tip-title: rgb(0,0,0);
+    
+    /* Warning (橙色) */
+    --admonition-warning-border: rgb(255, 145, 0);
+    --admonition-warning-bg: rgba(255, 145, 0, 0.1);
+    --admonition-warning-icon-color: rgb(0, 0, 0);
+    --admonition-warning-title: rgb(0,0,0);
+
+    /* Danger (红色) */
+    --admonition-danger-border: rgb(255, 23, 68);
+    --admonition-danger-bg: rgba(255, 23, 68, 0.1);
+    --admonition-danger-icon-color: rgb(0, 0, 0);
+    --admonition-danger-title: rgb(0,0,0);
+
+    /* Info (灰色) */
+    --admonition-info-border: rgb(128, 128, 128);
+    --admonition-info-bg: rgba(128, 128, 128, 0.1);
+    --admonition-info-icon-color: rgb(0, 0, 0);
+    --admonition-info-title: rgb(0,0,0);
+
+    /* Example (紫红色) */
+    --admonition-example-border: rgb(217, 0, 251);
+    --admonition-example-bg: rgba(255, 255, 255, 0.08);
+    --admonition-example-icon-color: rgb(0, 0, 0);
+    --admonition-example-title: rgb(0,0,0);
+
+    /* --- 图标定义 (SVG Mask) --- */
+    --icon-proof: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.07 14.88 2.05 2.05L15.06 23H13v-2.06zm1.97-1.75c.14 0 .27.06.38.17l1.28 1.28c.22.21.22.56 0 .77l-1 1-2.05-2.05 1-1c.11-.11.25-.17.39-.17M17 4v6l-2-2-2 2V4H9v16h2v2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v6l-2 2V4zM5 5v2h2V5zm0 6v2h2v-2zm0 6v2h2v-2z"/></svg>');
+    --icon-thm: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16.75 22.16-2.75-3L15.16 18l1.59 1.59L20.34 16l1.16 1.41-4.75 4.75M17 4v6l-2-2-2 2V4H9v16h3.08c.12.72.37 1.39.72 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v9.8c-.61-.35-1.28-.6-2-.72V4h-2M5 19h2v-2H5v2m0-6h2v-2H5v2m0-6h2V5H5v2Z"/></svg>');
+    --icon-music: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 6v2H3V6zm0 4v2H3v-2zM3 16v-2h8v2zM17 6h5v2h-3v9a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3c.35 0 .69.07 1 .18zm-1 10a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>');
+    --icon-note: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7,14.94L13.06,8.88L15.12,10.94L9.06,17H7V14.94M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M16.7,9.35L15.7,10.35L13.65,8.3L14.65,7.3C14.86,7.08 15.21,7.08 15.42,7.3L16.7,8.58C16.92,8.79 16.92,9.14 16.7,9.35M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2" /></svg>'); 
+    --icon-tip: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/></svg>');
+    --icon-warning: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>');
+    --icon-danger: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.5,20L16.36,10.27H13V4L8,13.73H11.5V20M12,2C14.75,2 17.1,3 19.05,4.95C21,6.9 22,9.25 22,12C22,14.75 21,17.1 19.05,19.05C17.1,21 14.75,22 12,22C9.25,22 6.9,21 4.95,19.05C3,17.1 2,14.75 2,12C2,9.25 3,6.9 4.95,4.95C6.9,3 9.25,2 12,2Z" /></svg>');
+    --icon-info: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm0-8h2V7h-2v2zm1-7C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>');
+    --icon-example: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>');
+}   
+
+/* Dark Mode 颜色适配 */
+.dark {
+    --admonition-proof-icon-color: #fff;
+    --admonition-thm-icon-color: #fff;
+    --admonition-music-icon-color: #fff;
+    --admonition-note-icon-color: #fff;
+    --admonition-info-icon-color: #fff;
+    --admonition-tip-icon-color: #fff;
+    --admonition-warning-icon-color: #fff;
+    --admonition-danger-icon-color: #fff;
+    --admonition-example-icon-color: #fff;
+
+    --admonition-proof-title: #fff;
+    --admonition-thm-title: #fff;
+    --admonition-music-title: #fff;
+    --admonition-note-title: #fff;
+    --admonition-tip-title: #fff;
+    --admonition-warning-title: #fff;
+    --admonition-danger-title: #fff;
+    --admonition-info-title: #fff;
+    --admonition-example-title: #fff;
+}
+
+/* =========================================
+   统一布局系统 (Shared Layout)，让自定义 Admonition 共享同一套模型
+   ========================================= */
+
+/* 选中所有自定义块类型 */
+.vp-doc .custom-block.proof,
+.vp-doc .custom-block.thm,
+.vp-doc .custom-block.music,
+.vp-doc .custom-block.note,
+.vp-doc .custom-block.tip,
+.vp-doc .custom-block.warning,
+.vp-doc .custom-block.danger,
+.vp-doc .custom-block.info,
+.vp-doc .custom-block.example {
+    /* 强制覆盖 VitePress 原生样式 */
+    border: 1px solid transparent !important; 
+    border-left-width: 4px !important;
+    border-radius: 8px;
+    margin: 16px 0;
+    padding: 0;
+    page-break-inside: avoid;
+}
+
+/* 标题栏 (Summary & P) 共享样式 */
+.vp-doc .custom-block .custom-block-title {
+    margin: 0 !important;
+    padding: 12px 16px !important; /* 统一标题 Padding */
+    font-weight: 700;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    /* 移除 summary 默认的 outline */
+    outline: none;
+}
+
+/* 内容区域 共享样式 */
+.vp-doc .custom-block .custom-block-body {
+    padding: 8px 16px 16px 16px; /* 统一内容 Padding */
+}
+
+/* --- 折叠 (Details) 特殊处理 --- */
+/* 确保 details 和 div 的表现一致 */
+.vp-doc details.custom-block summary {
+    cursor: pointer;
+    list-style: none;
+}
+.vp-doc details.custom-block summary::-webkit-details-marker {
+    display: none;
+}
+/* 折叠符号 (+/-) */
+.vp-doc details.custom-block summary::after {
+    content: "+";
+    margin-left: auto;
+    font-size: 1.2em;
+    opacity: 0.6;
+    font-weight: normal;
+}
+.vp-doc details.custom-block[open] summary::after {
+    content: "-";
+}
+/* 展开后的分割线 */
+.vp-doc details.custom-block[open] summary {
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+/* =========================================
+   统一图标处理 (Mixin)
+   ========================================= */
+.vp-doc .custom-block > .custom-block-title::before,
+.vp-doc .custom-block > summary::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    background-color: currentColor; /* 默认使用标题颜色 */
+}
+
+/* =========================================
+   各类型配色与图标绑定
+   ========================================= */
+
+/* --- Proof --- */
+.vp-doc .custom-block.proof {
+    border-color: var(--admonition-proof-border) !important;
+    background-color: var(--admonition-proof-bg);
+}
+.vp-doc .custom-block.proof > .custom-block-title,
+.vp-doc .custom-block.proof > summary {
+    color: var(--admonition-proof-title);
+}
+.vp-doc .custom-block.proof > .custom-block-title::before,
+.vp-doc .custom-block.proof > summary::before {
+    mask-image: var(--icon-proof);
+    -webkit-mask-image: var(--icon-proof);
+    background-color: var(--admonition-proof-icon-color);
+}
+/* 证毕符号 */
+.vp-doc .custom-block.proof .custom-block-body p:last-child::after {
+    content: "□";
+    float: right;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* --- Theorem --- */
+.vp-doc .custom-block.thm {
+    border-color: var(--admonition-thm-border) !important;
+    background-color: var(--admonition-thm-bg);
+}
+.vp-doc .custom-block.thm > .custom-block-title,
+.vp-doc .custom-block.thm > summary {
+    color: var(--admonition-thm-title);
+}
+.vp-doc .custom-block.thm > .custom-block-title::before,
+.vp-doc .custom-block.thm > summary::before {
+    mask-image: var(--icon-thm);
+    -webkit-mask-image: var(--icon-thm);
+    background-color: var(--admonition-thm-icon-color);
+}
+
+/* --- Music --- */
+.vp-doc .custom-block.music {
+    border-color: var(--admonition-music-border) !important;
+    background-color: var(--admonition-music-bg);
+}
+.vp-doc .custom-block.music > .custom-block-title,
+.vp-doc .custom-block.music > summary {
+    color: var(--admonition-music-title);
+}
+.vp-doc .custom-block.music > .custom-block-title::before,
+.vp-doc .custom-block.music > summary::before {
+    mask-image: var(--icon-music);
+    -webkit-mask-image: var(--icon-music);
+    background-color: var(--admonition-music-icon-color);
+}
+
+/* --- Note --- */
+.vp-doc .custom-block.note {
+    border-color: var(--admonition-note-border) !important;
+    background-color: var(--admonition-note-bg);
+    color: inherit;
+}
+.vp-doc .custom-block.note > .custom-block-title,
+.vp-doc .custom-block.note > summary {
+    color: var(--admonition-note-title);
+}
+.vp-doc .custom-block.note > .custom-block-title::before,
+.vp-doc .custom-block.note > summary::before {
+    mask-image: var(--icon-note);
+    -webkit-mask-image: var(--icon-note);
+    background-color: var(--admonition-note-icon-color);
+}
+
+/* --- Tip --- */
+.vp-doc .custom-block.tip {
+    border-color: var(--admonition-tip-border) !important;
+    background-color: var(--admonition-tip-bg);
+    color: inherit;
+}
+.vp-doc .custom-block.tip > .custom-block-title,
+.vp-doc .custom-block.tip > summary {
+    color: var(--admonition-tip-title);
+}
+.vp-doc .custom-block.tip > .custom-block-title::before,
+.vp-doc .custom-block.tip > summary::before {
+    mask-image: var(--icon-tip);
+    -webkit-mask-image: var(--icon-tip);
+    background-color: var(--admonition-tip-icon-color);
+}
+
+/* --- Warning --- */
+.vp-doc .custom-block.warning {
+    border-color: var(--admonition-warning-border) !important;
+    background-color: var(--admonition-warning-bg);
+    color: inherit;
+}
+.vp-doc .custom-block.warning > .custom-block-title,
+.vp-doc .custom-block.warning > summary {
+    color: var(--admonition-warning-title);
+}
+.vp-doc .custom-block.warning > .custom-block-title::before,
+.vp-doc .custom-block.warning > summary::before {
+    mask-image: var(--icon-warning);
+    -webkit-mask-image: var(--icon-warning);
+    background-color: var(--admonition-warning-icon-color);
+}
+
+/* --- Danger --- */
+.vp-doc .custom-block.danger {
+    border-color: var(--admonition-danger-border) !important;
+    background-color: var(--admonition-danger-bg);
+    color: inherit;
+}
+.vp-doc .custom-block.danger > .custom-block-title,
+.vp-doc .custom-block.danger > summary {
+    color: var(--admonition-danger-title);
+}
+.vp-doc .custom-block.danger > .custom-block-title::before,
+.vp-doc .custom-block.danger > summary::before {
+    mask-image: var(--icon-danger);
+    -webkit-mask-image: var(--icon-danger);
+    background-color: var(--admonition-danger-icon-color);
+}
+
+/* --- Info --- */
+.vp-doc .custom-block.info {
+    border-color: var(--admonition-info-border) !important;
+    background-color: var(--admonition-info-bg);
+    color: inherit;
+}
+.vp-doc .custom-block.info > .custom-block-title,
+.vp-doc .custom-block.info > summary {
+    color: var(--admonition-info-title);
+}
+.vp-doc .custom-block.info > .custom-block-title::before,
+.vp-doc .custom-block.info > summary::before {
+    mask-image: var(--icon-info);
+    -webkit-mask-image: var(--icon-info);
+    background-color: var(--admonition-info-icon-color);
+}
+
+/* --- Example --- */
+.vp-doc .custom-block.example {
+    border-color: var(--admonition-example-border) !important;
+    background-color: var(--admonition-example-bg);
+    color: inherit;
+}
+.vp-doc .custom-block.example > .custom-block-title,
+.vp-doc .custom-block.example > summary {
+    color: var(--admonition-example-title);
+}
+.vp-doc .custom-block.example > .custom-block-title::before,
+.vp-doc .custom-block.example > summary::before {
+    mask-image: var(--icon-example);
+    -webkit-mask-image: var(--icon-example);
+    background-color: var(--admonition-example-icon-color);
+}
+
+/* =========================================
+   MathJax 滚动优化
+   ========================================= */
+
+/* 块级公式 ($$ $$)：始终允许滚动，并隐藏初始滚动条 */
+.vp-doc mjx-container[display="true"] {
+    display: block !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    max-width: 100% !important;
+    padding: 10px 0 !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox 隐藏 */
+    -ms-overflow-style: none; /* IE 隐藏 */
+}
+
+/* 行内公式 ($ $)：仅在 Admonition 内部的长公式允许滚动 */
+.vp-doc .custom-block-body mjx-container:not([display="true"]) {
+    max-width: 100%;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    vertical-align: middle;
+    display: inline;
+}
+
+/* 如果行内公式内部的数学内容确实很长，强制其不换行 */
+.vp-doc mjx-container:not([display="true"]) mjx-math {
+    white-space: nowrap;
+}
+
+/* 滚动条交互优化：默认隐藏，仅在滑动/悬停时显示 */
+.vp-doc mjx-container::-webkit-scrollbar {
+    height: 3px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* 仅在鼠标悬停在公式上，或正在滚动时显示滚动条 */
+.vp-doc mjx-container:hover::-webkit-scrollbar,
+.vp-doc mjx-container:active::-webkit-scrollbar {
+    opacity: 1;
+}
+
+.vp-doc mjx-container::-webkit-scrollbar-thumb {
+    background: var(--vp-c-divider);
+    border-radius: 3px;
+}
+
+.vp-doc mjx-container::-webkit-scrollbar-thumb:hover {
+    background: var(--vp-c-brand-1); /* 悬停时加亮 */
+}
+
+/* 针对移动端的特定优化：滑动时才显现（Webkit 原生行为） */
+@media (max-width: 768px) {
+    .vp-doc mjx-container {
+        scrollbar-width: thin;
+    }
+}
+
+/* =========================================
+   其他配置
+   ========================================= */
+
+/* 亮色模式下 (html没有.dark类) -> 隐藏仅暗色模式显示的元素 */
+html:not(.dark) .only-dark {
+  display: none !important;
+}
+
+/* 暗色模式下 (html有.dark类) -> 隐藏仅亮色模式显示的元素 */
+html.dark .only-light {
+  display: none !important;
+}
+
+/* 简单的滑入动画定义 */
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
