@@ -1,6 +1,6 @@
 # jayi0908-note
 
-这是 jayi0908 的第一个~~不成熟~~笔记网站，用 MkDocs-material 搭建，汇总了本人的一点学习体会，是心得，更是情怀。
+这是 jayi0908 的第一个~~不成熟~~笔记网站，用 VitePress+Vue 搭建，汇总了本人的一点学习体会，是心得，更是情怀。
 
 地址在 https://note.jayi0908.cn/
 
