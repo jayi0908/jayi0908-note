@@ -25,13 +25,13 @@ export default defineConfig({
   base: '/',
 
   head: [
-    ['link', { rel: 'icon', href: '/assets/icons/favicon.png' }],
+    ['link', { rel: 'icon', href: '/icons/favicon.png' }],
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css' }],
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/kjartanhr/JetBrainsMono-Webfont@main/JetBrainsMono/JetBrainsMono.css' }],
   ],
 
   themeConfig: {
-    logo: '/assets/icons/material/notebook-outline.svg',
+    logo: '/icons/material/notebook-outline.svg',
     
     nav: [
       { text: 'Home', link: '/' },
@@ -126,6 +126,16 @@ export default defineConfig({
                 { text: '自行获取', link: '/misc/rythms/get-song'}
               ]
             },
+            {
+              text: 'Mac Helper',
+              link: '/misc/mac/',
+              collapsed: true,
+              items: [
+                { text: '获取Mac软件', link: '/misc/mac/software/' },
+                { text: '节约存储空间', link: '/misc/mac/storage/' },
+                { text: '在Mac上玩游戏', link: '/misc/mac/game/' }
+              ]
+            }
           ]
         }
       ]

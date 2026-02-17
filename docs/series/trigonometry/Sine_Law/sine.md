@@ -13,7 +13,7 @@ $$ \dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}=2R. $$
 
 ---
 
-正弦定理的奠基性在于它定量地刻画了三角形的一个概念：<span style="color:red;">大边对大角</span>，也定量地刻画了三角形的<span style="color:red;">边和角的关系</span>，使得它可以作为一系列基本定理的证明工具。
+正弦定理的奠基性在于它定量地刻画了三角形的一个概念：<span style="color:red;">大边对大角</span>，也定量地刻画了三角形的<span style="color:red;">边和角的关系</span>，使得它可以作为一系列基本定理的证明工具. 
 
 <Tabs>
   <div label="共边比例定理">
@@ -64,13 +64,13 @@ $$ \dfrac{BD}{DC}=\dfrac{S_{\triangle ABD}}{S_{\triangle ADC}}=\dfrac{\frac12 AB
 ::: Tip collapse 比例的写法
 这里我们采用了$\dfrac{BD}{DC}$，$\dfrac{\sin\angle BAD}{\sin\angle DAC}$，$\dfrac{S_{\triangle ABD}}{S_{\triangle ADC}}$的写法，是有讲究的，具体如下：
 
-- $\dfrac{BD}{DC}$ 为形如 $\dfrac{\text{始点}(B)\rightarrow\text{分点}(D)}{\text{分点}(D)\rightarrow\text{终点}(C)}$ 的比例写法，在后续定理中也会多次体现，这样书写“分比”有利于我们书写比例。
+- $\dfrac{BD}{DC}$ 为形如 $\dfrac{\text{始点}(B)\rightarrow\text{分点}(D)}{\text{分点}(D)\rightarrow\text{终点}(C)}$ 的比例写法，在后续定理中也会多次体现，这样书写“分比”有利于我们书写比例. 
 
 - $\dfrac{\sin\angle BAD}{\sin\angle DAC}$ 也类似于起边 $\rightarrow$ 分边 $\rightarrow$ 终边的写法，但是一般我们用有向角解释：  
-**有向角**：以 $AB$ 为始边，$AC$ 为终边的角记为 $\measuredangle BAC$，逆时针角的大小为正，顺时针为负。
+**有向角**：以 $AB$ 为始边，$AC$ 为终边的角记为 $\measuredangle BAC$，逆时针角的大小为正，顺时针为负. 
 由于有向角的存在，我们希望角度的起点 $\rightarrow$ 顶点 $\rightarrow$ 终点满足逆时针，这样分数线上下的角能够保持同号.
 
 - $\dfrac{S_{\triangle ABD}}{S_{\triangle ADC}}$ 的写法也是因为有向面积的概念，我们不再解释：  
-<strong>有向面积</strong>：以 $A,B,C$ 为逆时针顺序的三角形的面积记为 $[A B C]$，顺时针面积为负。
+<strong>有向面积</strong>：以 $A,B,C$ 为逆时针顺序的三角形的面积记为 $[A B C]$，顺时针面积为负. 
 
 :::

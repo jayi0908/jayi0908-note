@@ -406,16 +406,24 @@
 
 /* 亮色模式下 (html没有.dark类) -> 隐藏仅暗色模式显示的元素 */
 html:not(.dark) .only-dark {
-  display: none !important;
+    display: none !important;
 }
 
 /* 暗色模式下 (html有.dark类) -> 隐藏仅亮色模式显示的元素 */
 html.dark .only-light {
-  display: none !important;
+    display: none !important;
 }
 
 /* 简单的滑入动画定义 */
 @keyframes slideUp {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* 修改单词/空格的间距 */
+.vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc p, .vp-doc li, .vp-doc small {
+    word-spacing: -0.25em; 
+}
+.custom-block-title {
+    word-spacing: -0.25em; 
 }
