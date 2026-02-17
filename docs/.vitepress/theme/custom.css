@@ -414,6 +414,11 @@ html.dark .only-light {
     display: none !important;
 }
 
+/* 导航栏标题 Logo 适配暗色模式 */
+.dark .VPNavBarTitle.has-sidebar .logo {
+  filter: invert(1) brightness(2);
+}
+
 /* 简单的滑入动画定义 */
 @keyframes slideUp {
     from { transform: translateY(100%); }
