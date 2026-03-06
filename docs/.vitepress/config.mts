@@ -27,7 +27,7 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', href: '/icons/favicon.png' }],
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css' }],
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/kjartanhr/JetBrainsMono-Webfont@main/JetBrainsMono/JetBrainsMono.css' }],
+    // ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com' }],
   ],
 
   themeConfig: {
@@ -99,6 +99,18 @@ export default defineConfig({
               text: '杂项',
               link: '/series/trigonometry/Others/others'
             }
+          ]
+        },
+        {
+          text: '现代密码学导论',
+          link: '/series/cryptography/index',
+          collapsed: false,
+          items: [
+            { text: 'Chapter 1', link: '/series/cryptography/chapter1' },
+            { text: 'Chapter 2', link: '/series/cryptography/chapter2' },
+            { text: 'Chapter 3', link: '/series/cryptography/chapter3' },
+            { text: 'Chapter 4', link: '/series/cryptography/chapter4' },
+            { text: 'Chapter 5', link: '/series/cryptography/chapter5' },
           ]
         }
       ],
@@ -188,6 +200,7 @@ export default defineConfig({
 
       // 定义通用的 Admonition 函数 (渲染为 <Admonition> 组件)
       const createAdmonitionContainer = (type: string, defaultTitle: string) => {
+        const className = type.toLowerCase()
         md.use(container, type, {
           validate(params: string) {
             return params.trim().match(new RegExp(`^${type}`, 'i'))
@@ -195,20 +208,43 @@ export default defineConfig({
           render(tokens: any[], idx: number) {
             const token = tokens[idx]
             if (token.nesting === 1) {
-              // 解析标题与折叠标记
               const m = token.info.trim().match(new RegExp(`^${type}\\s+(.*)$`, 'i'))
               const rawTitle = m && m[1] ? m[1] : defaultTitle
-              
               const isCollapsible = /collapse|可折叠/i.test(rawTitle)
-              const cleanTitle = rawTitle.replace(/collapse|可折叠/gi, '').trim() || defaultTitle
+              
+              // 1. 前向扫描并打标记
+              if (isCollapsible) {
+                let i = idx + 1
+                let nesting = 1
+                while (i < tokens.length) {
+                  if (tokens[i].type === `container_${type}_open`) nesting++
+                  if (tokens[i].type === `container_${type}_close`) nesting--
+                  if (nesting === 0) {
+                    tokens[i]._isCollapsible = true // 使用自定义属性，不污染 info
+                    break
+                  }
+                  i++
+                }
+              }
 
-              return `<Admonition 
-                        type="${type.toLowerCase()}" 
-                        title="${md.utils.escapeHtml(cleanTitle)}" 
-                        :collapsible="${isCollapsible}"
-                      >\n`
-            } else {
-              return `</Admonition>\n`
+              // 2. 标题渲染：处理数学公式
+              let cleanTitle = rawTitle.replace(/collapse|可折叠/gi, '').trim() || defaultTitle
+              // 使用 renderInline 解析 LaTeX
+              let renderedTitle = md.renderInline(cleanTitle)
+              // 移除可能的渲染残留字符（比如某些情况下出现的辅助 span）
+              renderedTitle = renderedTitle.replace(/\s*$/, '');
+
+              if (isCollapsible) {
+                return `<details class="custom-block ${className}"><summary class="custom-block-title"><span>${renderedTitle}</span></summary><div class="custom-block-body">\n`
+              } else {
+                return `<div class="custom-block ${className}"><p class="custom-block-title"><span>${renderedTitle}</span></p><div class="custom-block-body">\n`
+              }
+            } 
+            
+            // --- 结束标签 ---
+            else {
+              // 读取我们之前打上的自定义属性标记
+              return token._isCollapsible ? `</div></details>\n` : `</div></div>\n`
             }
           }
         })

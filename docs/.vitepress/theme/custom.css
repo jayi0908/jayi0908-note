@@ -435,3 +435,9 @@ html.dark .only-light {
 .custom-block-title {
     word-spacing: -0.25em; 
 }
+
+/* 适当增加 strong 样式的文字阴影模拟加粗 */
+strong, b {
+  font-weight: bold;
+  text-shadow: 0.35px 0 0.35px currentColor;
+}

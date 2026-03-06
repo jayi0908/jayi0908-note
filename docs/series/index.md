@@ -3,3 +3,4 @@
 这里会放一些比较大的系列笔记和专栏，目前在更新（<s>挖坑</s>）：
 
 - [三角函数未竟之美](trigonometry/index.md)
+- [现代密码学导论](cryptography/index.md)

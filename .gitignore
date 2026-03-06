@@ -3,5 +3,7 @@ node_modules
 .DS_Store
 Thumbs.db
 
+makefile
+
 docs/.vitepress/dist
 docs/.vitepress/cache

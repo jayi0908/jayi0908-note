@@ -74,12 +74,12 @@ Tsu ka no ma no yu ri ka go no na ka me o to ji te i ta
 Yu me ka ra me za me ru so no to ki ga ku ru ma de  
 *在从梦中醒来之前*
 
-一直被白色耀眼的光芒包围
+一直被白色耀眼的光芒包围  
 白い眩しさに包まれている  
 Shiro i ma bo shi sa ni tsu tsu ma re te i ru  
 *包裹在耀眼的白色之中*
 
-追寻着夏日的足迹 回忆萦绕思绪万千
+追寻着夏日的足迹 回忆萦绕思绪万千  
 夏の足跡を追いかけボクは思い出をこぼす  
 Na tsu no a shi a to o o i ka ke bo ku wa o mo i de o ko bo su  
 *追寻着夏天的足迹，我洒下了回忆*
