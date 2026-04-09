@@ -132,10 +132,22 @@ export default defineConfig({
                   items: [
                     { text: 'ふたつの影', link: '/misc/rythms/songs/futatsu-no-kage' },
                     { text: '明け星', link: '/misc/rythms/songs/akeboshi' },
-                    { text: 'アルカテイル', link: '/misc/rythms/songs/alka-tale' }
+                    { text: '幻灯花火', link: '/misc/rythms/songs/gentou-hanabi' },
+                    { text: 'アルカテイル', link: '/misc/rythms/songs/alka-tale' },
+                    { text: '星座になれたら', link: '/misc/rythms/songs/sezani-naretara' },
+                    { text: 'ギターと孤独と蒼い惑星', link: '/misc/rythms/songs/gita-to-kodoku-to-aoihoshi' },
+                    { text: '忘れてやらない', link: '/misc/rythms/songs/wasurete-yaranai' },
+                    // { text: '空白とカタルシス', link: '/misc/rythms/songs/kuhaku-to-katarushisu' }
                   ]
                 },
-                { text: '自行获取', link: '/misc/rythms/get-song'}
+                { text: '自行获取', 
+                  link: '/misc/rythms/self-get',
+                  collapsed: true,
+                  items: [
+                    { text: '网易云音乐', link: '/misc/rythms/get/music123' },
+                    { text: '哔哩哔哩', link: '/misc/rythms/get/bili' }
+                  ]
+                }
               ]
             },
             {

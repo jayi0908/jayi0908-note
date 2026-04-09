@@ -75,9 +75,10 @@ const fetchSongData = async () => {
     // ==========================================
     const result = {
       id: id,
-      title: song.title || '未知歌曲',
-      artist: song.author || '未知歌手',
+      title: song.title || song.name || '未知歌曲',
+      artist: song.author || song.artist || '未知歌手',
       cover: song.pic || 'https://s4.music.126.net/style/web2/img/default/default_album.jpg',
+      url: song.url,
       lyrics: lyricText
     }
 

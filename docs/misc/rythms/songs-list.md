@@ -4,4 +4,8 @@
 
 - [ふたつの影 - Famishin / 春風まゆき](songs/futatsu-no-kage.md)
 - [明け星 - レモネードファクトリー](songs/akeboshi.md)
+- [幻灯花火 - レモネードファクトリー](songs/gentou-hanabi.md)
 - [アルカテイル - 鈴木このみ / VISUAL ARTS / Key](songs/alka-tale.md)
+- [星座になれたら - 結束バンド](songs/sezani-naretara.md)
+- [ギターと孤独と蒼い惑星 - 結束バンド](songs/gita-to-kodoku-to-aoihoshi.md)
+- [忘れてやらない - 結束バンド](songs/wasurete-yaranai.md)

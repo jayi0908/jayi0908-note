@@ -77,7 +77,8 @@ $$ \dfrac{P A \cdot B C}{\sin(\angle B P C-\angle B A C)}=\dfrac{P C \cdot A B}{
 
 ![](../../../assets/images/CevaLemma_eg_default.png){class="only-light" style="height: 180px; float: left"}
 ![](../../../assets/images/CevaLemma_eg_slate.png){class="only-dark" style="height: 180px; float: left"}
-    
+
+<span id="小黑题"></span>
 $P$ 为 $\triangle A B C$ 外接圆上一动点，$I_1$ 和 $I_2$ 为 $\triangle A B P$ 和 $\triangle B C P$ 的旁心，证明：$\triangle I_1 I_2 P$ 的外接圆过不依赖于 $P$ 的定点.
 
 <div style="clear: both;"></div>

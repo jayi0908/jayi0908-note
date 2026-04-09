@@ -1,14 +1,13 @@
 ---
-title: 获取歌曲
+title: 获取网易云音源
 ---
 
 <script setup>
 import { ref } from 'vue'
 
-// 用于存储爬取到的数据
+// 仅用于存储爬取到的歌曲基础数据
 const fetchedSong = ref(null)
 
-// 当组件爬取成功时触发
 const onSongLoaded = (data) => {
   fetchedSong.value = data
 }
@@ -16,9 +15,9 @@ const onSongLoaded = (data) => {
 
 # 自行获取
 
-通过"https://music.163.com/#/song?id=473403182"这样的链接可以访问网页端的网易云音乐，这里的参数就是标识歌曲的 ID，<SongImporter @loaded="onSongLoaded" />一下来获取自己想要的歌曲和歌词。
+通过"https://music.163.com/#/song?id=473403182"这样的链接可以访问网页端的网易云音乐，这里的参数就是标识歌曲的 ID，<SongImporter @loaded="onSongLoaded" />一下来获取自己想要的歌曲和歌词.
 
-目前仅支持单曲的获取，以及公开歌单内的单曲获取，私密歌单和专辑内的歌曲暂不支持。
+目前仅支持单曲的获取，以及公开歌单内的单曲获取，私密歌单和专辑内的歌曲暂不支持.
 
 ---
 
@@ -30,6 +29,14 @@ const onSongLoaded = (data) => {
     :title="fetchedSong.title"
     :artist="fetchedSong.artist"
     :cover="fetchedSong.cover"
+  />
+
+  <MusicDownload 
+    :id="fetchedSong.id.toString()"
+    :title="fetchedSong.title"
+    :artist="fetchedSong.artist"
+    :cover="fetchedSong.cover"
+    :audioUrl="fetchedSong.url"   :from="fetchedSong.from"
   />
 
   <div class="lyrics-box">

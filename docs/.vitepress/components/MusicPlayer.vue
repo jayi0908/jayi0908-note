@@ -1,12 +1,16 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
 const props = defineProps({
   id: { type: String, required: true },
   title: { type: String, default: '未知歌曲' },   // 歌名
   artist: { type: String, default: '未知歌手' },  // 歌手
-  cover: { type: String, default: 'https://s4.music.126.net/style/web2/img/default/default_album.jpg' } // 封面
+  cover: { type: String, default: 'https://s4.music.126.net/style/web2/img/default/default_album.jpg' }, // 封面
+  audioUrl: { type: String, default: '' },        // 最高优先级：支持直接传入音频直链
+  from: { type: String, default: 'netease' }      // 新增：数据来源，默认为网易云
 })
+
+const WORKER_URL = 'https://bili-audio-proxy.jayi0908.cn' 
 
 // --- 播放器状态 ---
 const isPlaying = ref(false)
@@ -15,8 +19,21 @@ const duration = ref(0)       // 总时长(秒)
 const currentTime = ref(0)    // 当前播放时间(秒)
 const volume = ref(0.7)       // 音量 0-1
 
-// 网易云直链地址
-const musicUrl = computed(() => `https://music.163.com/song/media/outer/url?id=${props.id}.mp3`)
+// 核心逻辑：根据 from 和 id 动态计算真实播放地址
+const musicUrl = computed(() => {
+  // 1. 如果外部强制传入了直链，直接用直链
+  if (props.audioUrl) {
+    return props.audioUrl
+  }
+  
+  // 2. 如果来源是 bilibili，利用我们的代理 Worker 解析 BV 号
+  if (props.from === 'bilibili') {
+    return `${WORKER_URL}/?bvid=${props.id}`
+  }
+
+  // 3. 默认逻辑：当作网易云 ID 处理
+  return `https://music.163.com/song/media/outer/url?id=${props.id}.mp3`
+})
 
 // 1. 播放/暂停
 const togglePlay = () => {
@@ -68,7 +85,7 @@ const onEnded = () => {
   isPlaying.value = false
 }
 
-// 时间格式化工具 (把 125s 变成 02:05)
+// 时间格式化工具
 const formatTime = (seconds) => {
   if (!seconds || isNaN(seconds)) return '00:00'
   const m = Math.floor(seconds / 60)
